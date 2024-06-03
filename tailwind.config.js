@@ -1,9 +1,7 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './**/*.html',
+    './js/**/*.js',
   ],
   darkMode: 'class',
   theme: {
@@ -83,8 +81,8 @@ module.exports = {
         '1/1': '100%',
       },
       fontFamily: {
-        inter: ['var(--font-inter)', 'sans-serif'],
-        'red-hat-display': ['var(--font-red-hat-display)', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        'red-hat-display': ['"Red Hat Display"', 'sans-serif'],
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1.5' }],
@@ -132,7 +130,7 @@ module.exports = {
     },
   },
   plugins: [
+    // eslint-disable-next-line global-require
     require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
   ],
 };
