@@ -77,7 +77,7 @@ class MSAMain extends LitElement {
                   class="md:col-span-7 lg:col-span-7 mb-8 md:mb-0 text-center md:text-left"
                 >
                   <h1
-                    class="h1 break-words lg:text-6xl mb-4 font-red-hat-display font-black"
+                    class="h1 break-words lg:text-4xl max-lg:text-3xl mb-4 font-red-hat-display font-black"
                     data-aos="fade-down"
                   >
                     Revolutionising MSK Care
@@ -371,7 +371,7 @@ class MSAMain extends LitElement {
                   data-aos-anchor="[data-aos-id-stats]"
                 >
                   <div
-                    class="font-red-hat-display break-words text-3xl font-black tracking-tighter mb-1"
+                    class="font-red-hat-display max-lg:text-2xl break-words text-3xl font-black tracking-tighter mb-1"
                   >
                     Audit
                   </div>
@@ -387,7 +387,7 @@ class MSAMain extends LitElement {
                   data-aos-delay="100"
                 >
                   <div
-                    class="font-red-hat-display text-3xl font-black tracking-tighter mb-1"
+                    class="font-red-hat-display max-lg:text-2xl text-3xl font-black tracking-tighter mb-1"
                   >
                     Analysis
                   </div>
@@ -403,7 +403,7 @@ class MSAMain extends LitElement {
                   data-aos-delay="200"
                 >
                   <div
-                    class="font-red-hat-display text-3xl font-black tracking-tighter mb-1"
+                    class="font-red-hat-display text-3xl max-lg:text-2xl font-black tracking-tighter mb-1"
                   >
                     Implement
                   </div>
@@ -419,7 +419,7 @@ class MSAMain extends LitElement {
                   data-aos-delay="300"
                 >
                   <div
-                    class="font-red-hat-display text-3xl font-black tracking-tighter mb-1"
+                    class="font-red-hat-display max-lg:text-2xl text-3xl font-black tracking-tighter mb-1"
                   >
                     Manage
                   </div>
