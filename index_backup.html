@@ -6,24 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link href="./css/vendors/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/vendors/swiper-bundle.min.css" />
-    <link href="./style.css" rel="stylesheet" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.5/holistic.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/geometric@2.5.4/build/geometric.min.js"></script>
+    <link href="./css/style.css" rel="stylesheet" />
     <script>
       if (
         localStorage.getItem("dark-mode") == "true" ||
@@ -472,7 +455,6 @@
               <!-- Hero content -->
               <div
                 class="md:grid md:grid-cols-12 md:gap-12 lg:gap-20 items-center"
-                x-data="{ modalExpanded: false }"
               >
                 <!-- Content -->
                 <div
@@ -482,7 +464,7 @@
                     class="h1 lg:text-6xl mb-4 font-red-hat-display font-black"
                     data-aos="fade-down"
                   >
-                    Mind, reimagined
+                    Your website, reimagined
                   </h1>
                   <p
                     class="text-xl text-gray-600 dark:text-gray-400"
@@ -495,14 +477,18 @@
                   <!-- CTA form -->
                   <form class="mt-8" data-aos="fade-down" data-aos-delay="300">
                     <div
-                      class="flex flex-col sm:flex-row justify-items-stretch max-w-sm mx-auto sm:max-w-md md:mx-0"
+                      class="flex flex-col sm:flex-row justify-center max-w-sm mx-auto sm:max-w-md md:mx-0"
                     >
-                      <!-- <input type="tel" class="form-input w-full mb-2 sm:mb-0 sm:mr-2" placeholder="Phone number" aria-label="Phone number" /> -->
+                      <input
+                        type="tel"
+                        class="form-input w-full mb-2 sm:mb-0 sm:mr-2"
+                        placeholder="Phone number"
+                        aria-label="Phone number"
+                      />
                       <a
-                        class="btn text-white text-4xl bg-teal-500 hover:bg-teal-400 shrink-0 rounded-full cursor-pointer"
-                        aria-controls="modal"
-                        @click.prevent="modalExpanded = true"
-                        >Try Emoji Game</a
+                        class="btn text-white bg-teal-500 hover:bg-teal-400 shrink-0"
+                        href="#0"
+                        >Request code</a
                       >
                     </div>
                     <!-- Success message -->
@@ -555,6 +541,7 @@
                 <!-- Mobile mockup -->
                 <div
                   class="md:col-span-5 lg:col-span-5 text-center md:text-right"
+                  x-data="{ modalExpanded: false }"
                   data-aos="fade-up"
                   data-aos-delay="450"
                 >
@@ -637,7 +624,9 @@
                     <!-- Play button -->
                     <a
                       class="absolute hover:opacity-75 transition duration-150 ease-in-out"
+                      @click.prevent="modalExpanded = true"
                       href="#0"
+                      aria-controls="modal"
                     >
                       <img
                         src="./images/play-button.svg"
@@ -680,30 +669,22 @@
                   >
                     <div
                       class="bg-white overflow-auto max-w-6xl w-full max-h-full"
-                      @click.outside="modalExpanded = false; stream.getTracks().forEach(function(track) {
-                        track.stop();
-                      });"
+                      @click.outside="modalExpanded = false"
                       @keydown.escape.window="modalExpanded = false"
                     >
                       <div class="relative pb-9/16">
-                        <!-- <video x-init="$watch('modalExpanded', value => value ? $el.play() : $el.pause())" class="absolute w-full h-full" width="1920" height="1080" loop controls>
-                                                <source src="./videos/video.mp4" type="video/mp4" />
-                                                Your browser does not support the video tag.
-                                            </video> -->
                         <video
-                          id="input_video"
+                          x-init="$watch('modalExpanded', value => value ? $el.play() : $el.pause())"
                           class="absolute w-full h-full"
                           width="1920"
                           height="1080"
-                        ></video>
-                        <canvas
-                          class="absolute top-0 left-0 w-full h-full"
-                          id="output_canvas"
-                          width="1280px"
-                          height="720px"
-                        ></canvas>
+                          loop
+                          controls
+                        >
+                          <source src="./videos/video.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
-                      <div id="control-panel" hidden></div>
                     </div>
                   </div>
                 </div>
@@ -2830,6 +2811,5 @@
     <script src="./js/vendors/aos.js"></script>
     <script src="./js/vendors/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
-    <script type="module" src="./js/script.js"></script>
   </body>
 </html>
