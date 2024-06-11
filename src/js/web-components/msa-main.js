@@ -4,7 +4,9 @@ import "./msa-components/msa-four-easy-step-process.js";
 import "./msa-components/msa-benifits-to-clinic.js";
 import "./msa-components/msa-benifits-to-patients.js";
 import "./msa-components/msa-key-features.js";
-
+import "./reusable-componets/msa-button.js";
+import "./msa-components/msa-msk-features.js";
+import "./msa-components/msa-video-image.js";
 class MSAMain extends LitElement {
   constructor() {
     super();
@@ -106,69 +108,13 @@ class MSAMain extends LitElement {
                         placeholder="Phone number"
                         aria-label="Phone number"
                       /> -->
-                      <a
-                        class="btn text-white bg-teal-500 hover:bg-teal-400 shrink-0"
-                        href="#0"
-                        >Book a Call</a
-                      >
+                      <msa-button class="btn text-white bg-teal-500 hover:bg-teal-400 shrink-0" text="Book a Call"></msa-button>
                     </div>
                     <!-- Success message -->
                     <!-- <p class="text-center md:text-left mt-2 opacity-75 text-sm">Thanks for subscribing!</p> -->
                   </form>
-                  <ul
-                    class="max-w-sm sm:max-w-md mx-auto md:max-w-none text-gray-600 dark:text-gray-400 mt-8 -mb-2"
-                    data-aos="fade-down"
-                    data-aos-delay="450"
-                  >
-                    <li class="flex items-center mb-2">
-                      <svg
-                        class="w-3 h-3 fill-current text-teal-400 mr-2 shrink-0"
-                        viewBox="0 0 12 12"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"
-                        />
-                      </svg>
-                      <span>Advanced Triage.</span>
-                    </li>
-                    <li class="flex items-center mb-2">
-                      <svg
-                        class="w-3 h-3 fill-current text-teal-400 mr-2 shrink-0"
-                        viewBox="0 0 12 12"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"
-                        />
-                      </svg>
-                      <span>Remote Patient Progress Monitoring.</span>
-                    </li>
-                    <li class="flex items-center mb-2">
-                      <svg
-                        class="w-3 h-3 fill-current text-teal-400 mr-2 shrink-0"
-                        viewBox="0 0 12 12"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"
-                        />
-                      </svg>
-                      <span>Efficient Trend Analysis.</span>
-                    </li>
-                    <li class="flex items-center mb-2">
-                      <svg
-                        class="w-3 h-3 fill-current text-teal-400 mr-2 shrink-0"
-                        viewBox="0 0 12 12"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z"
-                        />
-                      </svg>
-                      <span>Cost-Effective Solutions.</span>
-                    </li>
-                  </ul>
+                  <msa-msk-features class="max-w-sm sm:max-w-md mx-auto md:max-w-none flex flex-col sm:flex-row text-gray-600 justify-between dark:text-gray-400 mt-8 -mb-2"></msa-msk-features>
+                  
                   <div
                     class="mt-20 w-full max-lg:flex-wrap flex flex-col sm:flex-row  justify-between max-w-sm mx-auto sm:max-w-md md:mx-0"
                   >
@@ -178,165 +124,16 @@ class MSAMain extends LitElement {
                         placeholder="Phone number"
                         aria-label="Phone number"
                       /> -->
-                    <a
-                      class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0"
-                      href="#0"
-                      >Try Patient Experience in Real-Time</a
-                    >
-                    <a
-                      class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0"
-                      href="#0"
-                      >See How EMA Works</a
-                    >
+                    <msa-button class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0" text="Try Patient Experience in Real-Time"></msa-button>
+                    <msa-button class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0" text="See How EMA Works"></msa-button>
                   </div>
                 </div>
 
                 <!-- Mobile mockup -->
-                <div
-                  class="md:col-span-5 lg:col-span-5 text-center md:text-right"
-                  x-data="{ modalExpanded: false }"
-                  data-aos="fade-up"
-                  data-aos-delay="450"
-                >
-                  <div class="inline-flex relative justify-center items-center">
-                    <!-- Glow illustration -->
-                    <svg
-                      class="absolute mr-12 mt-32 pointer-events-none -z-1 dark:opacity-40"
-                      aria-hidden="true"
-                      width="678"
-                      height="634"
-                      viewBox="0 0 678 634"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="240"
-                        cy="394"
-                        r="240"
-                        fill="url(#piphoneill_paint0_radial)"
-                        fill-opacity=".4"
-                      />
-                      <circle
-                        cx="438"
-                        cy="240"
-                        r="240"
-                        fill="url(#piphoneill_paint1_radial)"
-                        fill-opacity=".6"
-                      />
-                      <defs>
-                        <radialGradient
-                          id="piphoneill_paint0_radial"
-                          cx="0"
-                          cy="0"
-                          r="1"
-                          gradientUnits="userSpaceOnUse"
-                          gradientTransform="rotate(90 -77 317) scale(189.054)"
-                        >
-                          <stop stop-color="#667EEA" />
-                          <stop
-                            offset="1"
-                            stop-color="#667EEA"
-                            stop-opacity=".01"
-                          />
-                        </radialGradient>
-                        <radialGradient
-                          id="piphoneill_paint1_radial"
-                          cx="0"
-                          cy="0"
-                          r="1"
-                          gradientUnits="userSpaceOnUse"
-                          gradientTransform="rotate(90 99 339) scale(189.054)"
-                        >
-                          <stop stop-color="#9F7AEA" />
-                          <stop
-                            offset="1"
-                            stop-color="#9F7AEA"
-                            stop-opacity=".01"
-                          />
-                        </radialGradient>
-                      </defs>
-                    </svg>
-                    <!-- Image inside mockup size: 290x624px (or 580x1248px for Retina devices) -->
-                    <img
-                      class="absolute"
-                      src="./images/mockup-image-01.jpg"
-                      width="290"
-                      height="624"
-                      style="max-width: 84.33%"
-                      alt="Features illustration"
-                    />
-                    <!-- iPhone mockup -->
-                    <img
-                      class="relative max-w-full mx-auto md:mr-0 md:max-w-none h-auto pointer-events-none"
-                      src="./images/iphone-mockup.png"
-                      width="344"
-                      height="674"
-                      alt="iPhone mockup"
-                      aria-hidden="true"
-                    />
-                    <!-- Play button -->
-                    <a
-                      class="absolute hover:opacity-75 transition duration-150 ease-in-out"
-                      href="#0"
-                      aria-controls="modal"
-                    >
-                      <img
-                        src="./images/play-button.svg"
-                        width="96"
-                        height="96"
-                        alt="Play"
-                      />
-                    </a>
-                  </div>
-
+                
+                <msa-video-image></msa-video-image>
                   <!-- Modal backdrop -->
-                  <div
-                    class="fixed inset-0 z-50 bg-black bg-opacity-75 transition-opacity"
-                    x-show="modalExpanded"
-                    x-transition:enter="transition ease-out duration-200"
-                    x-transition:enter-start="opacity-0"
-                    x-transition:enter-end="opacity-100"
-                    x-transition:leave="transition ease-out duration-100"
-                    x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0"
-                    aria-hidden="true"
-                    x-cloak
-                  ></div>
-
-                  <!-- Modal dialog -->
-                  <div
-                    id="modal"
-                    class="fixed inset-0 z-50 overflow-hidden flex items-center justify-center transform px-4 sm:px-6"
-                    role="dialog"
-                    aria-modal="true"
-                    aria-labelledby="modal-headline"
-                    x-show="modalExpanded"
-                    x-transition:enter="transition ease-in-out duration-200"
-                    x-transition:enter-start="opacity-0 translate-y-8"
-                    x-transition:enter-end="opacity-100 translate-y-0"
-                    x-transition:leave="transition ease-in-out duration-200"
-                    x-transition:leave-start="opacity-100 translate-y-0"
-                    x-transition:leave-end="opacity-0 translate-y-8"
-                    x-cloak
-                  >
-                    <div
-                      class="bg-white overflow-auto max-w-6xl w-full max-h-full"
-                    >
-                      <div class="relative pb-9/16">
-                        <video
-                          x-init="$watch('modalExpanded', value => value ? $el.play() : $el.pause())"
-                          class="absolute w-full h-full"
-                          width="1920"
-                          height="1080"
-                          loop
-                          controls
-                        >
-                          <source src="./videos/video.mp4" type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
             </div>
