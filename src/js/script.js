@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
-import "./msa-header.js";
-import "./msa-main.js";
-import "./msa-footer.js";
+import "./web-components/msa-header.js";
+import "./web-components/msa-main.js";
+import "./web-components/msa-footer.js";
 class MainPage extends LitElement {
   createRenderRoot() {
     return this;

@@ -1,4 +1,9 @@
 import { LitElement, html } from "lit";
+import "./reusable-componets/msa-tile.js";
+import "./msa-components/msa-four-easy-step-process.js";
+import "./msa-components/msa-benifits-to-clinic.js";
+import "./msa-components/msa-benifits-to-patients.js";
+import "./msa-components/msa-key-features.js";
 
 class MSAMain extends LitElement {
   constructor() {
@@ -90,9 +95,6 @@ class MSAMain extends LitElement {
                     Transforming musculoskeletal disorder management with
                     cutting-edge technology
                   </p>
-                  <my-timer duration="7"></my-timer>
-                  <my-timer duration="60"></my-timer>
-                  <my-timer duration="300"></my-timer>
                   <!-- CTA form -->
                   <form class="mt-8" data-aos="fade-down" data-aos-delay="300">
                     <div
@@ -340,7 +342,7 @@ class MSAMain extends LitElement {
             </div>
           </div>
         </section>
-
+ <msa-four-easy-steps></msa-four-easy-steps>
         <!-- Stats -->
         <section class="relative">
           <!-- Background gradient (light version only) -->
@@ -351,153 +353,10 @@ class MSAMain extends LitElement {
           ></div>
           <!-- End background gradient (light version only) -->
 
-          <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
-            <p
-              class="text-xl mb-8 text-gray-600 dark:text-gray-400"
-              data-aos="fade-down"
-              data-aos-delay="150"
-            >
-              Easy 4-Step Process:
-            </p>
-            <div class="pb-12 md:pb-20">
-              <div
-                class="grid grid-cols-2 gap-4 lg:gap-6 md:grid-cols-4 text-center"
-                data-aos-id-stats
-              >
-                <!-- 1st item -->
-                <div
-                  class="bg-white dark:bg-gray-800 py-8 px-1 shadow-2xl"
-                  data-aos="fade-down"
-                  data-aos-anchor="[data-aos-id-stats]"
-                >
-                  <div
-                    class="font-red-hat-display max-lg:text-2xl break-words text-3xl font-black tracking-tighter mb-1"
-                  >
-                    Audit
-                  </div>
-                  <div class="text-gray-600 dark:text-gray-400">
-                    We conduct an audit of all MSK patients
-                  </div>
-                </div>
-                <!-- 2nd item -->
-                <div
-                  class="bg-white dark:bg-gray-800 py-8 px-1 shadow-2xl"
-                  data-aos="fade-down"
-                  data-aos-anchor="[data-aos-id-stats]"
-                  data-aos-delay="100"
-                >
-                  <div
-                    class="font-red-hat-display max-lg:text-2xl text-3xl font-black tracking-tighter mb-1"
-                  >
-                    Analysis
-                  </div>
-                  <div class="text-gray-600 dark:text-gray-400">
-                    We study and report MSK patient trends
-                  </div>
-                </div>
-                <!-- 3rd item -->
-                <div
-                  class="bg-white dark:bg-gray-800 py-8 px-1 shadow-2xl"
-                  data-aos="fade-down"
-                  data-aos-anchor="[data-aos-id-stats]"
-                  data-aos-delay="200"
-                >
-                  <div
-                    class="font-red-hat-display text-3xl max-lg:text-2xl font-black tracking-tighter mb-1"
-                  >
-                    Implement
-                  </div>
-                  <div class="text-gray-600 dark:text-gray-400">
-                    We begin the integration and plugin process
-                  </div>
-                </div>
-                <!-- 4th item -->
-                <div
-                  class="bg-white dark:bg-gray-800 py-8 px-1 shadow-2xl"
-                  data-aos="fade-down"
-                  data-aos-anchor="[data-aos-id-stats]"
-                  data-aos-delay="300"
-                >
-                  <div
-                    class="font-red-hat-display max-lg:text-2xl text-3xl font-black tracking-tighter mb-1"
-                  >
-                    Manage
-                  </div>
-                  <div class="text-gray-600 dark:text-gray-400">
-                    We care for and monitor yellow flag patients remotely
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
-        <section class="border-t border-transparent dark:border-gray-800">
-          <div class="py-12 md:py-20">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6">
-              <!-- Section header -->
-              <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 class="h2  font-red-hat-display mb-32">
-                  From rough design files, to powerful products
-                </h1>
-                <h4
-                  class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-                >
-                  ADVANCED TRIAGE
-                </h4>
-                <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-                  Advanced technology to provide an accurate working diagnosis,
-                  helping healthcare providers make informed decisions quickly
-                  and efficiently.
-                </p>
-                <h4
-                  class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-                >
-                  REMOTE PATIENT MONITORING
-                </h4>
-                <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-                  Continuous monitoring of patient progress through the use of
-                  smart device cameras, ensuring adherence to prescribed
-                  exercise regimens and providing real-time feedback.
-                </p>
-                <h4
-                  class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-                >
-                  EFFICIENT TREND ANALYSIS
-                </h4>
-                <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-                  Designed specifically for the UK’s healthcare system, EMA
-                  ensures a smooth and effective implementation process.
-                </p>
-                <h4
-                  class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-                >
-                  COST-EFFECTIVE SOLUTIONS
-                </h4>
-                <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-                  By reducing the need for frequent in-person visits and
-                  streamlining care pathways, EMA delivers significant cost
-                  savings for healthcare providers.
-                </p>
-                <div
-                  class="flex flex-col sm:flex-row justify-center  mx-auto  md:mx-0"
-                >
-                  <!-- <input
-                type="tel"
-                class="form-input w-full mb-2 sm:mb-0 sm:mr-2"
-                placeholder="Phone number"
-                aria-label="Phone number"
-                /> -->
-                  <a
-                    class="btn text-white bg-teal-500 hover:bg-teal-400 shrink-0"
-                    href="#0"
-                    >Book a Call</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
+ <msa-key-features></msa-key-features>
 
         <!-- Carousel -->
         <section class="border-t border-transparent dark:border-gray-800">
@@ -737,104 +596,10 @@ class MSAMain extends LitElement {
         </section>
 
         <!-- Tabs -->
-        <section
-          class="relative border-t border-transparent dark:border-gray-800"
-        >
-          <!-- Background gradient -->
-          <div
-            class="absolute inset-0 h-128 dark:opacity-25 bg-gradient-to-b from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 pointer-events-none"
-            aria-hidden="true"
-          ></div>
-          <div class="mt-32  max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 class="h2  font-red-hat-display mb-32">Benefits to Patients</h1>
-            <h4
-              class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-            >
-              Simple and Easy Navigation
-            </h4>
-            <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-              EMA is a user-friendly app with a straightforward, simple design.
-            </p>
-            <h4
-              class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-            >
-              Motion Detection Technology
-            </h4>
-            <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-              EM Utilises the front camera of smart devices to monitor and
-              analyse patient movements, ensuring proper exercise techniques and
-              enhancing rehabilitation outcomes.
-            </p>
-            <h4
-              class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-            >
-              Personalised Exercise Plans
-            </h4>
-            <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-              Tailored exercise programs to individual patient needs, with
-              adaptive adjustments based on progress and feedback.
-            </p>
-          </div>
-          <!-- End background gradient -->
-        </section>
+        
 
-        <section
-          class="relative border-t border-transparent dark:border-gray-800"
-        >
-          <!-- Background gradient -->
-          <div
-            class="absolute inset-0 h-128 dark:opacity-25 bg-gradient-to-b from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 pointer-events-none"
-            aria-hidden="true"
-          ></div>
-          <div class="mt-32  max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 class="h2  font-red-hat-display mb-32">Benefits to Clinics</h1>
-            <h4
-              class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-            >
-              Enhanced Patient Engagement
-            </h4>
-            <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-              Engage patients actively during their treatment journey with
-              real-time feedback and personalized exercise plans.
-            </p>
-            <h4
-              class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-            >
-              Lower Medication Costs
-            </h4>
-            <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-              Encourage non-pharmacological treatment methods, reducing the
-              reliance on costly medications.
-            </p>
-            <h4
-              class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-            >
-              Decreased Clinician Workload
-            </h4>
-            <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-              Automate routine monitoring and follow-ups, allowing clinicians to
-              focus on more complex cases.
-            </p>
-            <h4
-              class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-            >
-              Improved Patient Outcomes
-            </h4>
-            <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-              Provide consistent, high-quality care that adapts to patient
-              progress, enhancing recovery rates.
-            </p>
-            <h4
-              class="uppercase font-bold	 text-xl text-gray-600 dark:text-gray-400"
-            >
-              Data-Driven Insights
-            </h4>
-            <p class="text-xl mb-16 text-gray-600 dark:text-gray-400">
-              Utilize collected data to refine treatment plans and improve
-              overall care strategies.
-            </p>
-          </div>
-          <section>
+        <msa-benefits-to-patients></msa-benefits-to-patients>
+        <msa-benefits-to-clinics></msa-benefits-to-clinics>
           <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <!-- CTA box -->
             <div class="dark relative bg-gray-800 py-10 px-8 md:py-16 md:px-12">
