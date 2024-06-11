@@ -12,7 +12,7 @@ const ratio = {
 };
 
 const resizeHandler = () => {
-  const ratio = { h: window.videoHeight, w: videoWidth };
+  const ratio = { h: window.videoHeight, w: window.videoWidth };
 
   let widthResult = window.innerWidth > 900 ? 900 : window.innerWidth;
   let heightResult = Math.floor(widthResult * (ratio.h / ratio.w));
@@ -41,7 +41,7 @@ const resizeHandler = () => {
   for (let i = 0; i < videoDivElement.children.length; i += 1) {
     const element = videoDivElement.children[i];
     if (element.tagName === "CANVAS") {
-      // console.log(widthResult, heightResult);
+      console.log("oo", widthResult, heightResult);
       element.width = widthResult;
       element.height = heightResult;
     } else {

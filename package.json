@@ -14,7 +14,7 @@
     }
   },
   "scripts": {
-    "start": "parcel",
+    "start": "parcel --https",
     "build": "parcel build"
   },
   "devDependencies": {

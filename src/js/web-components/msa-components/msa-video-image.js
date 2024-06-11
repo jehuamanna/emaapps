@@ -114,9 +114,9 @@ class MSAVideoImage extends LitElement {
       ></div>
 
       <msa-video-modal
-        class=" h-fit absolute top-1/2 ${this.isOpen
+        class="h-fit  fixed top-1/2 ${this.isOpen
           ? "visible"
-          : "invisible"} left-1/2 -translate-y-1/2 -translate-x-1/2  inset-0 z-50 overflow-hidden flex items-center justify-center transform px-4 sm:px-6"
+          : "invisible"} left-1/2 -translate-y-1/2 -translate-x-1/2  z-50 overflow-hidden flex items-center justify-center transform px-4 sm:px-6"
       ></msa-video-modal> `;
   }
 }
