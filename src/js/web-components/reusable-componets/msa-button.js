@@ -11,7 +11,7 @@ class MSAButton extends LitElement {
     return this;
   }
   render() {
-    return html` <a href="#0">${this.text}</a> `;
+    return html` <a href="#video-play">${this.text}</a> `;
   }
 }
 customElements.define("msa-button", MSAButton);
