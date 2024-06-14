@@ -1,4 +1,6 @@
 import { LitElement, html } from "lit";
+import { ref, createRef } from "lit/directives/ref.js";
+
 import "./reusable-componets/msa-tile.js";
 import "./msa-components/msa-four-easy-step-process.js";
 import "./msa-components/msa-benifits-to-clinic.js";
@@ -8,8 +10,22 @@ import "./reusable-componets/msa-button.js";
 import "./msa-components/msa-msk-features.js";
 import "./msa-components/msa-video-image.js";
 class MSAMain extends LitElement {
+  static get properties() {
+    return {
+      isOpen: {
+        type: String,
+      },
+    };
+  }
+  videoRef = createRef();
   constructor() {
     super();
+    this.isOpen = false;
+  }
+
+  play() {
+    this.isOpen = !this.isOpen;
+    this.videoRef.value.play();
   }
 
   createRenderRoot() {
@@ -108,15 +124,20 @@ class MSAMain extends LitElement {
                         placeholder="Phone number"
                         aria-label="Phone number"
                       /> -->
-                      <msa-button class="btn text-white bg-teal-500 hover:bg-teal-400 shrink-0" text="Book a Call"></msa-button>
+                      <msa-button
+                        class="btn text-white bg-teal-500 hover:bg-teal-400 shrink-0"
+                        text="Book a Call"
+                      ></msa-button>
                     </div>
                     <!-- Success message -->
                     <!-- <p class="text-center md:text-left mt-2 opacity-75 text-sm">Thanks for subscribing!</p> -->
                   </form>
-                  <msa-msk-features class="max-w-sm sm:max-w-md mx-auto md:max-w-none flex flex-col sm:flex-row text-gray-600 justify-between dark:text-gray-400 mt-8 -mb-2"></msa-msk-features>
-                  
+                  <msa-msk-features
+                    class="max-w-sm sm:max-w-md mx-auto md:max-w-none flex flex-col sm:flex-row text-gray-600 justify-between dark:text-gray-400 mt-8 -mb-2"
+                  ></msa-msk-features>
+
                   <div
-                    class="mt-20 w-full max-lg:flex-wrap flex flex-col sm:flex-row  justify-between max-w-sm mx-auto sm:max-w-md md:mx-0"
+                    class="mt-20 w-full max-lg:flex-wrap flex flex-col sm:flex-row justify-between max-w-sm mx-auto sm:max-w-md md:mx-0"
                   >
                     <!-- <input
                         type="tel"
@@ -124,22 +145,26 @@ class MSAMain extends LitElement {
                         placeholder="Phone number"
                         aria-label="Phone number"
                       /> -->
-                    <msa-button class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0" text="Try Patient Experience in Real-Time"></msa-button>
-                    <msa-button class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0" text="See How EMA Works"></msa-button>
+                    <msa-button
+                      class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0"
+                      text="Try Patient Experience in Real-Time"
+                    ></msa-button>
+                    <msa-button
+                      class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0"
+                      text="See How EMA Works"
+                    ></msa-button>
                   </div>
                 </div>
 
                 <!-- Mobile mockup -->
-                
+
                 <msa-video-image></msa-video-image>
-                  <!-- Modal backdrop -->
-                  
-                </div>
+                <!-- Modal backdrop -->
               </div>
             </div>
           </div>
         </section>
- <msa-four-easy-steps></msa-four-easy-steps>
+        <msa-four-easy-steps></msa-four-easy-steps>
         <!-- Stats -->
         <section class="relative">
           <!-- Background gradient (light version only) -->
@@ -149,11 +174,9 @@ class MSAMain extends LitElement {
             aria-hidden="true"
           ></div>
           <!-- End background gradient (light version only) -->
-
         </section>
 
-
- <msa-key-features></msa-key-features>
+        <msa-key-features></msa-key-features>
 
         <!-- Carousel -->
         <section class="border-t border-transparent dark:border-gray-800">
@@ -344,9 +367,47 @@ class MSAMain extends LitElement {
                   explains how.
                 </p>
                 <div
-                  class="mt-36 lg:col-span-2 max-w-sm mx-auto md:max-w-3xl lg:max-w-none"
+                  class="mt-36 h-fit lg:col-span-2 max-w-sm mx-auto md:max-w-3xl lg:max-w-none"
                 >
                   <div>
+                    <div
+                      @click=${() => {
+                        this.isOpen = false;
+                        this.videoRef.value.pause();
+                      }}
+                      class="${this.isOpen ? "visible" : "invisible"} 
+                        fixed inset-0 z-50 bg-black bg-opacity-75 transition-opacity"
+                      aria-hidden="true"
+                    ></div>
+
+                    <!-- Modal dialog -->
+                    <div
+                      id="modal"
+                      class="${this.isOpen
+                        ? "visible"
+                        : "invisible"}                         h-fit  fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
+ inset-0 z-50 overflow-hidden flex max-w-6xl w-full max-h-full items-center justify-center transform px-4 sm:px-6"
+                      role="dialog"
+                      aria-modal="true"
+                      aria-labelledby="modal-headline"
+                    >
+                      <div
+                        class="bg-white overflow-auto max-w-6xl w-full max-h-full"
+                      >
+                        <div class="relative pb-9/16">
+                          <video
+                            ${ref(this.videoRef)}
+                            class="absolute w-full h-full"
+                            width="1920"
+                            height="1080"
+                            controls
+                          >
+                            <source src="./videos/ema.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      </div>
+                    </div>
                     <div class="relative">
                       <img
                         class="w-full"
@@ -356,7 +417,10 @@ class MSAMain extends LitElement {
                         alt="Video thumbnail 01"
                       />
                       <div class="absolute inset-0 flex flex-col">
-                        <div class="grow flex justify-center items-center">
+                        <div
+                          @click=${this.play}
+                          class="grow flex justify-center items-center"
+                        >
                           <a
                             class="hover:opacity-75 transition duration-150 ease-in-out"
                             href="#0"
@@ -393,10 +457,10 @@ class MSAMain extends LitElement {
         </section>
 
         <!-- Tabs -->
-        
 
         <msa-benefits-to-patients></msa-benefits-to-patients>
         <msa-benefits-to-clinics></msa-benefits-to-clinics>
+        <section>
           <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <!-- CTA box -->
             <div class="dark relative bg-gray-800 py-10 px-8 md:py-16 md:px-12">
@@ -475,7 +539,8 @@ class MSAMain extends LitElement {
                   class="mb-6 lg:mr-16 lg:mb-0 text-center lg:text-left lg:w-1/2"
                 >
                   <h3 class="h3 font-red-hat-display text-gray-100">
-                  Sign up now and avail one-month for free                  </h3>
+                    Sign up now and avail one-month for free
+                  </h3>
                 </div>
 
                 <!-- CTA form -->
@@ -500,11 +565,8 @@ class MSAMain extends LitElement {
                 </form>
               </div>
             </div>
-          </div>
-        </section>
-              <!-- Success message -->
-              <!-- <p class="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm">Thanks for subscribing!</p> -->
-            </form>
+            <!-- Success message -->
+            <!-- <p class="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm">Thanks for subscribing!</p> -->
           </div>
           <!-- End background gradient -->
         </section>
