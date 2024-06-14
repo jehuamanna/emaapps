@@ -27,6 +27,7 @@
   "dependencies": {
     "@mediapipe/drawing_utils": "^0.3.1675466124",
     "@mediapipe/hands": "^0.4.1675469240",
+    "@vanillawc/wc-carousel-lite": "^0.0.7",
     "konva": "^9.3.11",
     "lit": "^3.1.4"
   }

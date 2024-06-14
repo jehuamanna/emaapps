@@ -1,5 +1,6 @@
 import { LitElement, html } from "lit";
 import { ref, createRef } from "lit/directives/ref.js";
+import "@vanillawc/wc-carousel-lite";
 
 import "./reusable-componets/msa-tile.js";
 import "./msa-components/msa-four-easy-step-process.js";
@@ -18,14 +19,26 @@ class MSAMain extends LitElement {
     };
   }
   videoRef = createRef();
+  carouselRef = createRef();
   constructor() {
     super();
     this.isOpen = false;
   }
 
+  firstUpdated() {
+    this.carouselRef.value.play();
+  }
+
   play() {
     this.isOpen = !this.isOpen;
     this.videoRef.value.play();
+  }
+
+  shiftRight() {
+    this.carouselRef.value.next(1);
+  }
+  shiftLeft() {
+    this.carouselRef.value.prev(1);
   }
 
   createRenderRoot() {
@@ -184,151 +197,28 @@ class MSAMain extends LitElement {
             <!-- Carousel built with Swiper.js [https://swiperjs.com/] -->
             <!-- * Initialized in src/js/main.js -->
             <!-- * Custom styles in src/css/additional-styles/theme.scss -->
-            <div class="carousel swiper-container">
-              <div class="swiper-wrapper">
-                <!-- Carousel items -->
-                <div class="swiper-slide max-w-lg">
-                  <img
-                    class="transition-opacity duration-300"
-                    src="./images/carousel-item-01.jpg"
-                    width="540"
-                    height="460"
-                    alt="Carousel item 01"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col transition-opacity duration-300 translate-z-0"
-                  >
-                    <div class="flex grow">
-                      <a
-                        class="inline-flex btn-sm text-white bg-teal-500 hover:bg-teal-400 mx-auto self-center"
-                        href="#0"
-                        >Learn more</a
-                      >
-                    </div>
-                    <div class="absolute bottom-0 right-0 p-6">
-                      <a
-                        class="text-xs font-medium text-center text-white py-2 px-3 rounded-full bg-gray-900 bg-opacity-50 hover:bg-opacity-100 transition duration-150 ease-in-out"
-                        href="#0"
-                        >Creative Services</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide max-w-lg">
-                  <img
-                    class="transition-opacity duration-300"
-                    src="./images/carousel-item-02.jpg"
-                    width="540"
-                    height="460"
-                    alt="Carousel item 02"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col transition-opacity duration-300 translate-z-0"
-                  >
-                    <div class="flex grow">
-                      <a
-                        class="inline-flex btn-sm text-white bg-teal-500 hover:bg-teal-400 mx-auto self-center"
-                        href="#0"
-                        >Learn more</a
-                      >
-                    </div>
-                    <div class="absolute bottom-0 right-0 p-6">
-                      <a
-                        class="text-xs font-medium text-center text-white py-2 px-3 rounded-full bg-gray-900 bg-opacity-50 hover:bg-opacity-100 transition duration-150 ease-in-out"
-                        href="#0"
-                        >Creative Services</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide max-w-lg">
-                  <img
-                    class="transition-opacity duration-300"
-                    src="./images/carousel-item-03.jpg"
-                    width="540"
-                    height="460"
-                    alt="Carousel item 03"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col transition-opacity duration-300 translate-z-0"
-                  >
-                    <div class="flex grow">
-                      <a
-                        class="inline-flex btn-sm text-white bg-teal-500 hover:bg-teal-400 mx-auto self-center"
-                        href="#0"
-                        >Learn more</a
-                      >
-                    </div>
-                    <div class="absolute bottom-0 right-0 p-6">
-                      <a
-                        class="text-xs font-medium text-center text-white py-2 px-3 rounded-full bg-gray-900 bg-opacity-50 hover:bg-opacity-100 transition duration-150 ease-in-out"
-                        href="#0"
-                        >Creative Services</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide max-w-lg">
-                  <img
-                    class="transition-opacity duration-300"
-                    src="./images/carousel-item-04.jpg"
-                    width="540"
-                    height="460"
-                    alt="Carousel item 04"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col transition-opacity duration-300 translate-z-0"
-                  >
-                    <div class="flex grow">
-                      <a
-                        class="inline-flex btn-sm text-white bg-teal-500 hover:bg-teal-400 mx-auto self-center"
-                        href="#0"
-                        >Learn more</a
-                      >
-                    </div>
-                    <div class="absolute bottom-0 right-0 p-6">
-                      <a
-                        class="text-xs font-medium text-center text-white py-2 px-3 rounded-full bg-gray-900 bg-opacity-50 hover:bg-opacity-100 transition duration-150 ease-in-out"
-                        href="#0"
-                        >Creative Services</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide max-w-lg">
-                  <img
-                    class="transition-opacity duration-300"
-                    src="./images/carousel-item-05.jpg"
-                    width="540"
-                    height="460"
-                    alt="Carousel item 05"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col transition-opacity duration-300 translate-z-0"
-                  >
-                    <div class="flex grow">
-                      <a
-                        class="inline-flex btn-sm text-white bg-teal-500 hover:bg-teal-400 mx-auto self-center"
-                        href="#0"
-                        >Learn more</a
-                      >
-                    </div>
-                    <div class="absolute bottom-0 right-0 p-6">
-                      <a
-                        class="text-xs font-medium text-center text-white py-2 px-3 rounded-full bg-gray-900 bg-opacity-50 hover:bg-opacity-100 transition duration-150 ease-in-out"
-                        href="#0"
-                        >Creative Services</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            <wc-carousel-lite ${ref(this.carouselRef)}>
+              <img
+                src="./images/carousel-item-01.jpg"
+                class="item"
+                width="100%"
+              />
+              <img
+                src="./images/carousel-item-02.jpg"
+                class="item"
+                width="100%"
+              />
+              <img
+                src="./images/carousel-item-03.jpg"
+                class="item"
+                width="100%"
+              />
+            </wc-carousel-lite>
             <!-- Arrows -->
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
               <div class="flex items-center justify-between mt-12 md:mt-16">
                 <button
+                  @click=${this.shiftLeft}
                   class="carousel-prev relative z-20 w-12 h-12 p-1 box-content flex items-center justify-center group bg-teal-500 hover:bg-teal-400 dark:bg-gray-800 dark:hover:bg-teal-500 dark:hover:bg-opacity-25 shadow-xl transition duration-150 ease-in-out"
                 >
                   <span class="sr-only">Previous</span>
@@ -343,6 +233,7 @@ class MSAMain extends LitElement {
                   </svg>
                 </button>
                 <button
+                  @click=${this.shiftRight}
                   class="carousel-next relative z-20 w-12 h-12 p-1 box-content flex items-center justify-center group bg-teal-500 hover:bg-teal-400 dark:bg-gray-800 dark:hover:bg-teal-500 dark:hover:bg-opacity-25 shadow-xl transition duration-150 ease-in-out"
                 >
                   <span class="sr-only">Next</span>
