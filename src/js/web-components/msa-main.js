@@ -25,7 +25,7 @@ class MSAMain extends LitElement {
     this.isOpen = false;
   }
 
-  firstUpdated() {
+  updateComplete() {
     this.carouselRef.value.play();
   }
 
@@ -138,6 +138,7 @@ class MSAMain extends LitElement {
                         aria-label="Phone number"
                       /> -->
                       <msa-button
+                        href="#"
                         class="btn text-white bg-teal-500 hover:bg-teal-400 shrink-0"
                         text="Book a Call"
                       ></msa-button>
@@ -159,10 +160,12 @@ class MSAMain extends LitElement {
                         aria-label="Phone number"
                       /> -->
                     <msa-button
+                      href="#"
                       class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0"
                       text="Try Patient Experience in Real-Time"
                     ></msa-button>
                     <msa-button
+                      href="#video-play"
                       class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0"
                       text="See How EMA Works"
                     ></msa-button>
@@ -249,7 +252,7 @@ class MSAMain extends LitElement {
                 </button>
               </div>
             </div>
-            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div id="video-play" class="max-w-6xl mx-auto px-4 sm:px-6">
               <!-- Section header -->
               <div class="max-w-3xl mt-24 mx-auto text-center pb-12 md:pb-16">
                 <h1 class="h2 font-red-hat-display mb-4">How EMA Works</h1>
