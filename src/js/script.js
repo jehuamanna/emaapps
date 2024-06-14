@@ -2,6 +2,8 @@ import { LitElement, html } from "lit";
 import "./web-components/msa-header.js";
 import "./web-components/msa-main.js";
 import "./web-components/msa-footer.js";
+import "./web-components/msa-components/msa-video-image.js";
+
 class MainPage extends LitElement {
   createRenderRoot() {
     return this;

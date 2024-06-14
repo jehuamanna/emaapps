@@ -1,21 +1,30 @@
 import { LitElement, html } from "lit";
 import "./msa-video-modal.js";
 class MSAVideoImage extends LitElement {
-  static properties = {
-    isOpen: {
-      type: Boolean,
-    },
-  };
+  static get properties() {
+    return {
+      isPlaying: { type: Boolean },
+      handlePlaying: { attribute: false },
+    };
+  }
+
+  constructor() {
+    super();
+    this.isPlaying = false;
+  }
+  updated(changedProperties) {
+    console.log("Parent updated:", changedProperties);
+  }
 
   handleModalClick() {
-    console.log(this.isOpen);
-    this.isOpen = !this.isOpen;
+    this.handlePlaying();
   }
 
   createRenderRoot() {
     return this;
   }
   render() {
+    console.log("ppp", this.isPlaying);
     return html`<div
         class="md:col-span-5 lg:col-span-5 text-center md:text-right"
         data-aos="fade-up"
@@ -93,7 +102,7 @@ class MSAVideoImage extends LitElement {
           <a
             class="absolute top-24 hover:opacity-75 transition duration-150 ease-in-out"
             href="#0"
-            @click=${this.handleModalClick}
+            @click=${this.handlePlaying}
             aria-controls="modal"
           >
             <img
@@ -108,13 +117,13 @@ class MSAVideoImage extends LitElement {
 
       <div
         @click=${this.handleModalClick}
-        class="fixed inset-0 z-50 ${this.isOpen
+        class="fixed inset-0 z-50 ${this.isPlaying
           ? "visible"
           : "invisible"} bg-black bg-opacity-75 transition-opacity"
       ></div>
 
       <msa-video-modal
-        class=" ${this.isOpen
+        class=" ${this.isPlaying
           ? "visible"
           : "invisible"} h-fit  fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  z-50 overflow-hidden flex items-center justify-center transform px-4 sm:px-6"
       ></msa-video-modal> `;

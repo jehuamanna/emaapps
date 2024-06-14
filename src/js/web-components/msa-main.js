@@ -9,13 +9,11 @@ import "./msa-components/msa-benifits-to-patients.js";
 import "./msa-components/msa-key-features.js";
 import "./reusable-componets/msa-button.js";
 import "./msa-components/msa-msk-features.js";
-import "./msa-components/msa-video-image.js";
 class MSAMain extends LitElement {
   static get properties() {
     return {
-      isOpen: {
-        type: String,
-      },
+      isPlaying: { type: Boolean },
+      isOpen: { type: Boolean },
     };
   }
   videoRef = createRef();
@@ -23,6 +21,12 @@ class MSAMain extends LitElement {
   constructor() {
     super();
     this.isOpen = false;
+    this.isPlaying = false;
+  }
+
+  handlePlaying() {
+    this.isPlaying = !this.isPlaying;
+    console.log(this.isPlaying);
   }
 
   updateComplete() {
@@ -160,6 +164,10 @@ class MSAMain extends LitElement {
                         aria-label="Phone number"
                       /> -->
                     <msa-button
+                      @click=${(e) => {
+                        e.preventDefault();
+                        this.handlePlaying();
+                      }}
                       href="#"
                       class="btn w-64 max-lg:w-full mr-10 mb-10 text-white bg-teal-500 hover:bg-teal-400 shrink-0"
                       text="Try Patient Experience in Real-Time"
@@ -174,7 +182,10 @@ class MSAMain extends LitElement {
 
                 <!-- Mobile mockup -->
 
-                <msa-video-image></msa-video-image>
+                <msa-video-image
+                  .handlePlaying=${this.handlePlaying}
+                  .isplaying=${this.isPlaying}
+                ></msa-video-image>
                 <!-- Modal backdrop -->
               </div>
             </div>
