@@ -4,20 +4,12 @@ class MSAVideoImage extends LitElement {
   static get properties() {
     return {
       isPlaying: { type: Boolean },
-      handlePlaying: { attribute: false },
+      handlePlaying: { type: Function },
     };
   }
 
-  constructor() {
-    super();
-    this.isPlaying = false;
-  }
   updated(changedProperties) {
     console.log("Parent updated:", changedProperties);
-  }
-
-  handleModalClick() {
-    this.handlePlaying();
   }
 
   createRenderRoot() {
@@ -116,7 +108,7 @@ class MSAVideoImage extends LitElement {
       </div>
 
       <div
-        @click=${this.handleModalClick}
+        @click=${this.handlePlaying}
         class="fixed inset-0 z-50 ${this.isPlaying
           ? "visible"
           : "invisible"} bg-black bg-opacity-75 transition-opacity"

@@ -26,7 +26,7 @@ class MSAMain extends LitElement {
 
   handlePlaying() {
     this.isPlaying = !this.isPlaying;
-    console.log(this.isPlaying);
+    console.log("jehu", this.isPlaying);
   }
 
   updateComplete() {
@@ -183,8 +183,8 @@ class MSAMain extends LitElement {
                 <!-- Mobile mockup -->
 
                 <msa-video-image
-                  .handlePlaying=${this.handlePlaying}
-                  .isplaying=${this.isPlaying}
+                  .handlePlaying=${this.handlePlaying.bind(this)}
+                  .isPlaying=${this.isPlaying}
                 ></msa-video-image>
                 <!-- Modal backdrop -->
               </div>
