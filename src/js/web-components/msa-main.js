@@ -207,28 +207,25 @@ class MSAMain extends LitElement {
 
         <!-- Carousel -->
         <section class="border-t border-transparent dark:border-gray-800">
-          <div class="py-12 md:py-20">
+          <div class="py-12 md:py-20 m-auto">
             <!-- Carousel built with Swiper.js [https://swiperjs.com/] -->
             <!-- * Initialized in src/js/main.js -->
             <!-- * Custom styles in src/css/additional-styles/theme.scss -->
-            <wc-carousel-lite ${ref(this.carouselRef)}>
+            <wc-carousel-lite class="w-96" ${ref(this.carouselRef)}>
               <img
                 src="./images/carousel-item-01.jpg"
-                class="item"
-                width="100%"
+                class="item w-3/4"
               />
               <img
                 src="./images/carousel-item-02.jpg"
-                class="item"
-                width="100%"
+                class="item w-3/4"
               />
               <img
                 src="./images/carousel-item-03.jpg"
-                class="item"
-                width="100%"
+                class="item w-3/4"
               />
             </wc-carousel-lite>
-            <!-- Arrows -->
+            <!-- ArroWs -->
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
               <div class="flex items-center justify-between mt-12 md:mt-16">
                 <button
@@ -263,6 +260,9 @@ class MSAMain extends LitElement {
                 </button>
               </div>
             </div>
+          </div>
+        </section>
+        <section>
             <div id="video-play" class="max-w-6xl mx-auto px-4 sm:px-6">
               <!-- Section header -->
               <div class="max-w-3xl mt-24 mx-auto text-center pb-12 md:pb-16">
@@ -356,7 +356,7 @@ class MSAMain extends LitElement {
                     </div>
                   </div>
                 </div>
-              </div>
+              </section>
             </div>
           </div>
         </section>
