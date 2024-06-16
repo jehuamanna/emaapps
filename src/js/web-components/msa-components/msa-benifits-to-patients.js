@@ -39,10 +39,10 @@ class MSABenifitsOfClinics extends LitElement {
         class="relative border-t border-transparent dark:border-gray-800"
       >
         <!-- Background gradient -->
-        <div
-          class="absolute inset-0 h-128 dark:opacity-25 bg-gradient-to-b from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 pointer-events-none"
-          aria-hidden="true"
-        ></div>
+        <!-- <div
+             class="absolute inset-0 h-128 dark:opacity-25 bg-gradient-to-b from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 pointer-events-none"
+             aria-hidden="true"
+             ></div> -->
         <div class="mt-32  max-w-3xl mx-auto text-center pb-12 md:pb-16">
           <h1 class="h2  font-red-hat-display mb-32">Benefits to patients</h1>
           ${this.titles.map(

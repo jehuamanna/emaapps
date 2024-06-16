@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit";
+import { LitElement, html } from 'lit';
 class MSAMSKFeature extends LitElement {
   static get properties() {
     return {
@@ -26,4 +26,4 @@ class MSAMSKFeature extends LitElement {
   }
 }
 
-customElements.define("msa-msk-feature", MSAMSKFeature);
+customElements.define('msa-msk-feature', MSAMSKFeature);
