@@ -103,7 +103,7 @@ export class Header extends LitElement {
                 <a
                   class="btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-6"
                   href="contact.html"
-                  >Request code</a
+                  >Book a Call</a
                 >
               </li>
             </ul>

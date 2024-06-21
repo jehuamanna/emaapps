@@ -26,7 +26,6 @@ class MSAMain extends LitElement {
 
   handlePlaying() {
     this.isPlaying = !this.isPlaying;
-    console.log("jehu", this.isPlaying);
   }
 
   updateComplete() {
@@ -344,7 +343,7 @@ class MSAMain extends LitElement {
                           <a
                             class="text-gray-900 dark:text-gray-400 font-medium"
                             href="#0"
-                            >Using index pages</a
+                            >Intro to EMA</a
                           >
                           <div
                             class="inline-flex px-3 py-1 text-xs font-medium text-white bg-gray-900 bg-opacity-50 dark:text-teal-400 dark:bg-teal-600 dark:bg-opacity-25 rounded-full"
