@@ -28,9 +28,6 @@ class MSAMain extends LitElement {
     this.isPlaying = !this.isPlaying;
   }
 
-  updateComplete() {
-    this.carouselRef.value.play();
-  }
 
   play() {
     this.isOpen = !this.isOpen;
@@ -210,18 +207,26 @@ class MSAMain extends LitElement {
             <!-- Carousel built with Swiper.js [https://swiperjs.com/] -->
             <!-- * Initialized in src/js/main.js -->
             <!-- * Custom styles in src/css/additional-styles/theme.scss -->
-            <wc-carousel-lite class="w-96" ${ref(this.carouselRef)}>
+            <wc-carousel-lite class="w-96" ${ref(this.carouselRef)} autoplay interval=2000 transition-duration=1000 transition-type='ease' direction="right">
               <img
                 src="./images/carousel-item-01.jpg"
-                class="item w-3/4"
+                class="item w-1/4"
               />
               <img
                 src="./images/carousel-item-02.jpg"
-                class="item w-3/4"
+                class="item w-1/4"
               />
               <img
                 src="./images/carousel-item-03.jpg"
-                class="item w-3/4"
+                class="item w-1/4"
+              />
+              <img
+                src="./images/carousel-item-04.jpg"
+                class="item w-1/4"
+              />
+              <img
+                src="./images/carousel-item-05.jpg"
+                class="item w-1/4"
               />
             </wc-carousel-lite>
             <!-- ArroWs -->
