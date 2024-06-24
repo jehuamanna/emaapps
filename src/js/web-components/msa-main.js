@@ -1,14 +1,14 @@
-import { LitElement, html } from "lit";
-import { ref, createRef } from "lit/directives/ref.js";
-import "@vanillawc/wc-carousel-lite";
+import { LitElement, html } from 'lit';
+import { ref, createRef } from 'lit/directives/ref.js';
+import '@vanillawc/wc-carousel-lite';
 
-import "./reusable-componets/msa-tile.js";
-import "./msa-components/msa-four-easy-step-process.js";
-import "./msa-components/msa-benifits-to-clinic.js";
-import "./msa-components/msa-benifits-to-patients.js";
-import "./msa-components/msa-key-features.js";
-import "./reusable-componets/msa-button.js";
-import "./msa-components/msa-msk-features.js";
+import './reusable-componets/msa-tile.js';
+import './msa-components/msa-four-easy-step-process.js';
+import './msa-components/msa-benifits-to-clinic.js';
+import './msa-components/msa-benifits-to-patients.js';
+import './msa-components/msa-key-features.js';
+import './reusable-componets/msa-button.js';
+import './msa-components/msa-msk-features.js';
 class MSAMain extends LitElement {
   static get properties() {
     return {
@@ -27,7 +27,6 @@ class MSAMain extends LitElement {
   handlePlaying() {
     this.isPlaying = !this.isPlaying;
   }
-
 
   play() {
     this.isOpen = !this.isOpen;
@@ -207,26 +206,26 @@ class MSAMain extends LitElement {
             <!-- Carousel built with Swiper.js [https://swiperjs.com/] -->
             <!-- * Initialized in src/js/main.js -->
             <!-- * Custom styles in src/css/additional-styles/theme.scss -->
-            <wc-carousel-lite class="w-96" ${ref(this.carouselRef)} autoplay interval=2000 transition-duration=1000 transition-type='ease' direction="right">
+            <wc-carousel-lite class="w-96" ${ref(this.carouselRef)} infinite autoplay interval=2000 transition-duration=1000 transition-type='ease' direction="right">
               <img
                 src="./images/carousel-item-01.jpg"
-                class="item w-1/4"
+                class="item w-1/4 max-sm:w-full sm:max-xl:w-1/2"
               />
               <img
                 src="./images/carousel-item-02.jpg"
-                class="item w-1/4"
+                class="item w-1/4 max-sm:w-full sm:max-xl:w-1/2"
               />
               <img
                 src="./images/carousel-item-03.jpg"
-                class="item w-1/4"
+                class="item w-1/4 max-sm:w-full sm:max-xl:w-1/2"
               />
               <img
                 src="./images/carousel-item-04.jpg"
-                class="item w-1/4"
+                class="item w-1/4 max-sm:w-full sm:max-xl:w-1/2"
               />
               <img
                 src="./images/carousel-item-05.jpg"
-                class="item w-1/4"
+                class="item w-1/4 max-sm:w-full sm:max-xl:w-1/2"
               />
             </wc-carousel-lite>
             <!-- ArroWs -->
@@ -284,7 +283,7 @@ class MSAMain extends LitElement {
                         this.isOpen = false;
                         this.videoRef.value.pause();
                       }}
-                      class="${this.isOpen ? "visible" : "invisible"} 
+                      class="${this.isOpen ? 'visible' : 'invisible'}
                         fixed inset-0 z-50 bg-black bg-opacity-75 transition-opacity"
                       aria-hidden="true"
                     ></div>
@@ -292,9 +291,9 @@ class MSAMain extends LitElement {
                     <!-- Modal dialog -->
                     <div
                       id="modal"
-                      class="${this.isOpen
-                        ? "visible"
-                        : "invisible"}                         h-fit  fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
+                      class="${
+                        this.isOpen ? 'visible' : 'invisible'
+                      }                         h-fit  fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
  inset-0 z-50 overflow-hidden flex max-w-6xl w-full max-h-full items-center justify-center transform px-4 sm:px-6"
                       role="dialog"
                       aria-modal="true"
@@ -484,4 +483,4 @@ class MSAMain extends LitElement {
   }
 }
 
-customElements.define("msa-main", MSAMain);
+customElements.define('msa-main', MSAMain);
